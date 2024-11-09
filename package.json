@@ -6,6 +6,8 @@
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
+
   "dependencies": {
     "ansi-regex": "^6.1.0",
     "ansi-styles": "^6.2.1",
