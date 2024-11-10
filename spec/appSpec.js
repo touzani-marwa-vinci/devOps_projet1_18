@@ -202,4 +202,31 @@ describe("minute line",function(){
     
 });
 
+describe("the fiveHoursLine",function(){
+    const clock=new BerlinClock();
+
+    it("fiveHoursLine should return no lamp when given 0:00",function(){
+        const time="0:00";
+
+        const result=clock.fiveHourLine(time);
+
+        expect(result).toBe("Aucune lampe allumée");
+
+    });
+
+    it("fiveHoursLine should return 1 lamps when given 5:00",function(){
+        const time="5:00";
+
+        const result=clock.fiveHourLine(time);
+
+        expect(result).toBe("une lampe rouge allumée");
+    });
+
+    it("fiveHoursLine should return 2 lamps when given 10:00",function(){
+        const time="10:00";
+
+        const result=clock.fiveHourLine(time);
+
+        expect(result).toBe("deux lampes rouge allumée");
+    });                                                                                                                                                                                                                                                                                                                });
 });
