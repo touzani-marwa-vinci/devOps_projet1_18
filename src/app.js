@@ -43,6 +43,16 @@ export class BerlinClock{
         if(minutes>=55 && minutes<60)return "1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune,9ème lampe rouge,10ème lampe jaune,11ème lampe jaune";
 
     }
+    oneHourLine(time){
+
+        const hours=parseInt(time.split(":")[0])%5;
+
+        if(hours===0)return "Aucune lampe allumée";
+        if(hours===1)return "une lampe rouge allumée";
+        if(hours===2)return "deux lampes rouge allumée";
+        if(hours===3)return "trois lampes rouge allumée";
+        if(hours===4)return "quatre lampes rouge allumée";
+      }
 
     fourLamps(minutes) {
         return minutes % 10 === 4 || minutes % 10 === 9;

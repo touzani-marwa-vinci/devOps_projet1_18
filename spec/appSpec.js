@@ -153,6 +153,53 @@ describe("minute line",function(){
     
             expect(result).toBe("1er lampe jaune ,2ème lampe jaune" + "\n" + "deux lampes jaune allumée");
         });
+
+
     });
+    describe("the oneHoureLine",function(){
+    const clock=new BerlinClock();
+
+    it("oneHourLine should return no lamp when given 0:00",function(){
+        const time="0:00";
+
+        const result=clock.oneHourLine(time);
+
+        expect(result).toBe("Aucune lampe allumée");
+    });
+
+    it("oneHourLine should return 1 lamp when given 1:00",function(){
+        const time="1:00";
+
+        const result=clock.oneHourLine(time);
+
+        expect(result).toBe("une lampe rouge allumée");
+    });
+
+    it("oneHourLine should return 2 lamps when given 2:00",function(){
+        const time="2:00";
+
+        const result=clock.oneHourLine(time);
+
+        expect(result).toBe("deux lampes rouge allumée");
+    });
+
+    it("oneHourLine should return 3 lamps when given 3:00",function(){
+        const time="3:00";
+
+        const result=clock.oneHourLine(time);
+
+        expect(result).toBe("trois lampes rouge allumée");
+    });
+
+    
+    it("oneHourLine should return 4 lamps when given 4:00",function(){
+        const time="4:00";
+
+        const result=clock.oneHourLine(time);
+
+        expect(result).toBe("quatre lampes rouge allumée");
+    });
+    
+});
 
 });
