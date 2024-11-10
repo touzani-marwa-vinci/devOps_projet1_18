@@ -85,4 +85,11 @@ export class BerlinClock {
         return minutes % 10 === 0 || minutes % 10 === 5;
     }
 
+    secondeLine(time){
+
+        const seconds=parseInt(time.split(":")[2]);
+        if(seconds %2===0)return "lampe jaune allumée";
+        return "lampe éteinte";
+    }
+
 }
