@@ -5,12 +5,12 @@ export class BerlinClock{
 
         if(this.noLamp(minutes))return "aucune lampe allumée";
 
-        if(this.firsLamp(minutes))return "1ère lampe jaune allumée";
+        if(this.firstLamp(minutes))return "1ère lampe jaune allumée";
 
         if(this.twoLamps(minutes))return "deux lampes jaune allumée";
 
         if(this.threeLamps(minutes))return "trois lampes jaune allumée";
-
+        
         if(this.fourLamps(minutes))return "quatre lampes jaune allumée";
 
 
