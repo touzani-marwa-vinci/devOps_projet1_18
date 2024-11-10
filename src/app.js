@@ -12,14 +12,27 @@ export class BerlinClock{
         if(this.threeLamps(minutes))return "trois lampes jaune allumée";
         
         if(this.fourLamps(minutes))return "quatre lampes jaune allumée";
-
-
-
-
-        
+   
     }
 
+    fiveMinuteLine(time){
+        const minutes=parseInt(time.split(":")[1]);
+ 
+        if(minutes<5)return "Aucune lampe allumée";
+ 
+        if(minutes>=5 && minutes<10)return "1er lampe jaune allumé";
+ 
+        if(minutes>=10 && minutes<15)return "1er lampe jaune ,2ème lampe jaune";
+ 
+        if(minutes>=15 && minutes<20)return "1er lampe jaune ,2ème lampe jaune,3ème lampe rouge";
+ 
+        if(minutes>=20 && minutes<25)return "1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune";
+ 
+        if(minutes>=25 && minutes<30)return "1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune";
 
+        if(minutes>=30 && minutes<35)return "1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge";
+
+    }
 
     fourLamps(minutes) {
         return minutes % 10 === 4 || minutes % 10 === 9;
