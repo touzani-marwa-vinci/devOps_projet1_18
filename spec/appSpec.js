@@ -228,5 +228,22 @@ describe("the fiveHoursLine",function(){
         const result=clock.fiveHourLine(time);
 
         expect(result).toBe("deux lampes rouge allumée");
-    });                                                                                                                                                                                                                                                                                                                });
+    });
+
+    it("fiveHoursLine should return 3 lamps when given 15:00",function(){
+        const time="15:00";
+
+        const result=clock.fiveHourLine(time);
+
+        expect(result).toBe("trois lampes rouge allumée");
+    });
+
+    it("fiveHoursLine should return 4 lamps when given 20:00",function(){
+        const time="20:00";
+
+        const result=clock.fiveHourLine(time);
+
+        expect(result).toBe("quatre lampes rouge allumée");
+    });
+                                                                                                                                                                                                                                                                                                         });
 });
