@@ -106,6 +106,53 @@ describe("minute line",function(){
     
             expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge");
         });
+        it("5MinuteLine should return 7 lamp when given 0:35",function(){
+            const time="0:35";
+    
+            const result=clock.fiveMinuteLine(time);
+    
+            expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune");
+        });
+    
+        it("5MinuteLine should return 8 lamp when given 0:40",function(){
+            const time="0:40";
+    
+            const result=clock.fiveMinuteLine(time);
+    
+            expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune");
+        });
+    
+        it("5MinuteLine should return 9 lamp when given 0:45",function(){
+            const time="0:45";
+    
+            const result=clock.fiveMinuteLine(time);
+    
+            expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune,9ème lampe rouge");
+        });
+    
+        it("5MinuteLine should return 10 lamp when given 0:50",function(){
+            const time="0:50";
+    
+            const result=clock.fiveMinuteLine(time);
+    
+            expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune,9ème lampe rouge,10ème lampe jaune");
+        });
+        
+        it("5MinuteLine should return 11 lamp when given 0:55",function(){
+            const time="0:55";
+    
+            const result=clock.fiveMinuteLine(time);
+    
+            expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune,9ème lampe rouge,10ème lampe jaune,11ème lampe jaune");
+        });
+    
+        it("5MinuteLine should return 3 lamp of five minutes and 2 lamp of one minute when given 0:12",function(){
+            const time="0:12";
+    
+            const result=clock.fiveMinuteLine(time)+ "\n" +clock.oneMinuteLine(time);
+    
+            expect(result).toBe("1er lampe jaune ,2ème lampe jaune" + "\n" + "deux lampes jaune allumée");
+        });
     });
 
 });
