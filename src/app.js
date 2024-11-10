@@ -65,6 +65,18 @@ export class BerlinClock {
         if(hours>=20 && hours<25)return "quatre lampes rouge allumée";
     }
 
+    berlinClock(time){
+        const fiveHour=this.fiveHourLine(time);
+        const oneHour=this.oneHourLine(time);
+        const fiveMinute=this.fiveMinuteLine(time);
+        const oneMinute=this.oneMinuteLine(time);
+        const seconds=this.secondeLine(time);
+
+
+        return `${fiveHour}\n${oneHour}\n${fiveMinute}\n${oneMinute}\n${seconds}`;
+
+    }
+
     fourLamps(minutes) {
         return minutes % 10 === 4 || minutes % 10 === 9;
     }
