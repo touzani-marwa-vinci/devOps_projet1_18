@@ -51,110 +51,111 @@ describe("minute line", function () {
     });
 });
 
-describe("the 5MinuteLine", function () {
+describe("the 5MinuteLine", function() {
     const clock = new BerlinClock();
 
-    it("5MinuteLine should return no lamp when given 0:00", function () {
+    it("5MinuteLine should return no lamp when given 0:00", function() {
         const time = "0:00";
-
         const result = clock.fiveMinuteLine(time);
-
+        console.log("Test time:", time,":",result);
+        console.log("");
         expect(result).toBe("Aucune lampe allumée");
     });
 
-    it("5MinuteLine should return 1 lamp when given 0:05", function () {
+    it("5MinuteLine should return 1 lamp when given 0:05", function() {
         const time = "0:05";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune allumé");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune");
     });
 
-    it("5MinuteLine should return 2 lamp when given 0:10", function () {
+    it("5MinuteLine should return 2 lamps when given 0:10", function() {
         const time = "0:10";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune");
     });
 
-    it("5MinuteLine should return 3 lamp when given 0:15", function () {
+    it("5MinuteLine should return 3 lamps when given 0:15", function() {
         const time = "0:15";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune, lampe rouge");
     });
 
-    it("5MinuteLine should return 4 lamp when given 0:20", function () {
+    it("5MinuteLine should return 4 lamps when given 0:20", function() {
         const time = "0:20";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune, lampe rouge, lampe jaune");
     });
 
-    it("5MinuteLine should return 5 lamp when given 0:25", function () {
+    it("5MinuteLine should return 5 lamps when given 0:25", function() {
         const time = "0:25";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune");
     });
 
-    it("5MinuteLine should return 6 lamp when given 0:30", function () {
+    it("5MinuteLine should return 6 lamps when given 0:30", function() {
         const time = "0:30";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge");
     });
-    it("5MinuteLine should return 7 lamp when given 0:35", function () {
+
+    it("5MinuteLine should return 7 lamps when given 0:35", function() {
         const time = "0:35";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune");
     });
 
-    it("5MinuteLine should return 8 lamp when given 0:40", function () {
+    it("5MinuteLine should return 8 lamps when given 0:40", function() {
         const time = "0:40";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune");
     });
 
-    it("5MinuteLine should return 9 lamp when given 0:45", function () {
+    it("5MinuteLine should return 9 lamps when given 0:45", function() {
         const time = "0:45";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune,9ème lampe rouge");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge");
     });
 
-    it("5MinuteLine should return 10 lamp when given 0:50", function () {
+    it("5MinuteLine should return 10 lamps when given 0:50", function() {
         const time = "0:50";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune,9ème lampe rouge,10ème lampe jaune");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune");
     });
 
-    it("5MinuteLine should return 11 lamp when given 0:55", function () {
+    it("5MinuteLine should return 11 lamps when given 0:55", function() {
         const time = "0:55";
-
         const result = clock.fiveMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune,9ème lampe rouge,10ème lampe jaune,11ème lampe jaune");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune");
     });
 
-    it("5MinuteLine should return 3 lamp of five minutes and 2 lamp of one minute when given 0:12", function () {
+    it("5MinuteLine should return 3 lamps of five minutes and 2 lamps of one minute when given 0:12", function() {
         const time = "0:12";
-
         const result = clock.fiveMinuteLine(time) + "\n" + clock.oneMinuteLine(time);
-
-        expect(result).toBe("1er lampe jaune ,2ème lampe jaune" + "\n" + "deux lampes jaune allumée");
+        console.log("Test time:", time,":",result);
+        console.log("");
+        expect(result).toBe("lampe jaune, lampe jaune\ndeux lampes jaune allumée");
     });
 });
 
