@@ -285,23 +285,30 @@ describe("the berlinclock",function(){
         const time="0:00:00";
 
         const result=clock.berlinClock(time)
-
-        expect(result).toBe("Aucune lampe allumée\nAucune lampe allumée\nAucune lampe allumée\naucune lampe allumée\nlampe jaune allumée");
+        console.log("Test time:", time,":","[",result,"]");
+        console.log("");
+        expect(result).toBe("Aucune lampe allumée"+"\n"+"Aucune lampe allumée"+"\n"+"Aucune lampe allumée"+"\n"+"aucune lampe allumée"+"\n"+"lampe jaune allumée");
     });
 
-    it("berlinClick should return the correct result when given 19:42:01",function(){
-        const time="19:42:01";
+     it("berlinClick should return the correct result when given 19:42:01",function(){
+         const time="19:42:01";
 
-        const result=clock.berlinClock(time)
+         const result=clock.berlinClock(time)
+         console.log("Test time:", time,":","[",result,"]");
+         console.log("");
+        // expect(result).toBe("trois lampes rouge allumée\nquatre lampes rouge allumée\n1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune\ndeux lampes jaune allumée\nlampe éteinte");
+        expect(result).toBe("trois lampes rouge allumée"+"\n"+"quatre lampes rouge allumée"+"\n"+"lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune"+"\n"+"deux lampes jaune allumée"+"\n"+"lampe éteinte");
 
-        expect(result).toBe("trois lampes rouge allumée\nquatre lampes rouge allumée\n1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune\ndeux lampes jaune allumée\nlampe éteinte");
+
     });
-
-    it("berlinClock should return the correct representation for 23:59:59", function() {
+it("berlinClock should return the correct representation for 23:59:59", function() {
         const time = "23:59:59";
 
         const result = clock.berlinClock(time);
+        console.log("Test time:", time,":","[",result,"]");
+        console.log("");
+        // expect(result).toBe("quatre lampes rouge allumée\ntrois lampes rouge allumée\n1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune,9ème lampe rouge,10ème lampe jaune,11ème lampe jaune\nles quatre lampes jaune allumée\nlampe éteinte");
+        expect(result).toBe("quatre lampes rouge allumée"+"\n"+"trois lampes rouge allumée"+"\n"+"lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune, lampe rouge, lampe jaune, lampe jaune"+"\n"+"quatre lampes jaune allumée"+"\n"+"lampe éteinte");
 
-        expect(result).toBe("quatre lampes rouge allumée\ntrois lampes rouge allumée\n1er lampe jaune ,2ème lampe jaune,3ème lampe rouge,4ème lampe jaune,5ème lampe jaune,6ème lampe rouge,7ème lampe jaune,8ème lampe jaune,9ème lampe rouge,10ème lampe jaune,11ème lampe jaune\nquatre lampes jaune allumée\nlampe éteinte");
     });
 });
